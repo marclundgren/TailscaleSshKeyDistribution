@@ -4,7 +4,7 @@
 set -e
 
 # Get current username
-CURRENT_USER=$(whoami)
+USER="marc"
 
 # Get current hostname to exclude from the list
 CURRENT_HOSTNAME=$(hostname)
@@ -60,7 +60,7 @@ copy_ssh_key() {
         
         my $pid = open3(undef, undef, undef, 
             "ssh-copy-id", "-o", "StrictHostKeyChecking=accept-new", 
-            "'${CURRENT_USER}@${ip}'");
+            "'${USER}@${ip}'");
         
         # Set alarm for timeout
         eval {
